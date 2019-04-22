@@ -1,0 +1,23 @@
+	* {
+		box-sizing: border-box;
+		font-family: 'Monserrat', sans-serif;
+		font-size: 14px;
+	}
+	
+	.container {
+		padding: 0 20px;
+	}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 0 30px;
+	}
+}
+
+@media (min-width: 1040px) {
+	.container {
+		max-width: 1300px;
+		padding: 0 40px;
+		margin: 0 auto;
+	}
+}

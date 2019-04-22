@@ -1,0 +1,224 @@
+.page-header {
+	background-color: #283645;
+}
+
+.navbar-wrap {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-right: -20px;
+	margin-left: -20px;
+}
+
+.navbar__logo-block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #485461; 
+	margin-right: -20px;
+	margin-left: -20px;
+}
+
+.navbar__logo {
+	margin-left: 20px;
+	height: 22px;
+	width: 75px;
+	background: url("../img/logo-mobile.svg") no-repeat;
+}
+
+//Стили для бургера
+
+.hamburger {
+	padding: 15px 0px;
+	padding-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+  .hamburger.is-active:hover {
+    opacity: 0.7; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #fff; }
+
+.hamburger-box {
+  width: 33px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 1px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+.hamburger--slider .hamburger-inner {
+  top: 2px; }
+  .hamburger--slider .hamburger-inner::before {
+    top: 10px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s; }
+  .hamburger--slider .hamburger-inner::after {
+    top: 20px; }
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--slider.is-active .hamburger-inner::before {
+    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    opacity: 0; }
+  .hamburger--slider.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(-90deg); }
+
+//Завершение стилей для бургера
+
+.site-list {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	align-items: stretch;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.site-list__item {
+	display: flex;
+	flex-direction: column;
+	height: 50px;
+	border-bottom: 1px solid #485461; 
+	padding: 0;
+	text-align: center;
+	justify-content: center;
+}
+
+.site-list__link {
+	font-family: $bold;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-list__link:hover{
+	color: rgb(100, 100, 100);
+}
+
+.site-list__link:active {
+	color: rgb(180, 180, 180);
+}
+
+.navbar-wrap--hidden {
+	display: none;
+}
+
+//Стили для планшета
+
+@media (min-width: 660px) {
+	.navbar__logo {
+		margin-top: 25px;
+		margin-bottom: 25px;
+		height: 40px;
+		width: 147px;
+		background: url("../img/logo-tablet.svg") no-repeat;
+	}
+
+	.site-list__link {
+		font-size: 18px;
+		color: #fff;
+	}
+
+	.site-list__link--active:hover {
+		color: #e597b8;
+	}
+
+	
+}
+
+//Стили для десктоп
+
+@media (min-width: 960px) {
+	.page-header {
+		background-color: rgba(9, 36, 63, 0.7);
+	}
+	.navbar__logo-block {
+		border-bottom: none;
+		justify-content: flex-start;
+		margin: 0;
+	}
+	.navbar {
+		align-content: center;
+		display: flex;
+		justify-content: space-between
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.navbar-wrap {
+		flex-direction: row;
+		justify-content: flex-end;
+		margin: 0;
+	}
+
+	.navbar-wrap--hidden {
+		display: flex;
+	}
+
+	.navbar__logo {
+		background-image: url("../img/logo-desktop.svg");
+	}
+
+	.site-list {
+		flex-direction: row;
+		}
+
+	.site-list__item {
+		padding-left: 80px;
+		border-bottom: none;
+	}
+
+	.site-list__link {
+		font-size: 20px;
+		color: white;
+		text-transform: none;
+		font-family: $regular;
+	}
+
+	.site-list__link:hover {
+		color: #c1ddb1;
+	}
+
+	.site-list__link:active {
+		color: #94c377;
+	}
+
+}
